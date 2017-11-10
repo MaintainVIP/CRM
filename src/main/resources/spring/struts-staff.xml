@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!--员工配置-->
+    <package name="sta" namespace="/" extends="json-default">
+        <action name="staffAction_*" class="com.quinn.CRM.staff.action.StaffAction" method="{1}">
+            <!--1.登录成功-->
+            <!-- 以后所有的入口都是action,所有的jsp都在web-inf
+                    通过action进入到jsp界面
+            -->
+            <!--2.没有登录成,需要登录-->
+            <result name="login">/pages/login.jsp</result>
+            <!--3.首页-->
+            <result name="home">pages/frame.jsp</result>
+        </action>
+    </package>
+</struts>
+

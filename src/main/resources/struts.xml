@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+    <!--设置为开发模式,log日志会多一些-->
+    <constant name="struts.devMode" value="true"/>
+    <!--让spring管理action对象的创建-->
+    <!--当然,这个配置可以不写,因为在struts2-spring-plugin里面已经有了-->
+    <constant name="struts.objectFactory" value="spring"/>
+
+    <package name="CRM" extends="json-default">
+
+        <action name="LoginAction" class="com.quinn.CRM.action.frame.LoginAction" method="login">
+            <result name="success">/pages/frame.jsp</result>
+        </action>
+        <action name="left1" class="com.quinn.CRM.action.frame.LoginAction" method="left1">
+            <result name="success">/pages/frame/left1.jsp</result>
+        </action>
+        <action name="left" class="com.quinn.CRM.action.frame.LoginAction" method="left">
+            <result name="success">/pages/frame/left.jsp</result>
+        </action>
+        <action name="left2" class="com.quinn.CRM.action.frame.LoginAction" method="left2">
+            <result name="success">/pages/frame/left2.jsp</result>
+        </action>
+        <action name="control" class="com.quinn.CRM.action.frame.LoginAction" method="control">
+            <result name="success">/pages/frame/control.jsp</result>
+        </action>
+        <action name="right" class="com.quinn.CRM.action.frame.LoginAction" method="right">
+            <result name="success">/pages/frame/right.jsp</result>
+        </action>
+        <action name="top" class="com.quinn.CRM.action.frame.LoginAction" method="top">
+            <result name="success">/pages/frame/top.jsp</result>
+        </action>
+    </package>
+    <package name="Refer" extends="json-default">
+        <action name="refer_action" class="com.quinn.CRM.action.refer.referAction" method="findAll">
+            <result name="addOrEditRefer">/pages/refer/addOrEditRefer.jsp</result>
+            <result name="listRefer">/pages/refer/listRefer.jsp</result>
+        </action>
+    </package>
+</struts>
